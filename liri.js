@@ -102,6 +102,7 @@ function myPlayList() {
             console.log('Error occurred: ' + err);
             return;
         }
+        
         //Handle Data
         var albumTrack = data.tracks.items;
 
@@ -112,6 +113,7 @@ function myPlayList() {
             console.log("Track Title: " + albumTrack[i].name);
           
         }
+
     });
 
 }
@@ -128,7 +130,7 @@ function myPlayList() {
     var omdbUrl = "http://www.omdbapi.com/?t=" + searchTitle + "&y=&plot=short&r=json";
     // rotten tomatoes url
     var rotTomaUrl = "https://www.rottentomatoes.com/m/" + searchTitle;
-    
+
     omdb(omdbUrl, function(error, response, body) {
         // If the request is successful
         if (!error && response.statusCode === 200) {
@@ -142,6 +144,7 @@ function myPlayList() {
             console.log("Movie Actor: " + JSON.parse(body).Actors);
             console.log("Rotten Tomatoes URL: " + rotTomaUrl);
         }
+
     });
 }
 
